@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fly Quality Consulting | Aviation Consulting & Regulatory Compliance</title>
+    <meta name="description" content="Especialistas en certificación RAC SEA, RAC OPS, QMS, SMS y auditorías aeronáuticas en Costa Rica y región.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-navy: #0A192F;
+            --secondary-blue: #1E3A8A;
+            --accent-gold: #C5A059;
+            --accent-gold-hover: #b08c46;
+            --bg-light: #F8FAFC;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --white: #FFFFFF;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Header & Nav --- */
+        header {
+            background-color: var(--primary-navy);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo i {
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--white);
+        }
+
+        .logo-text span {
+            color: var(--accent-gold);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--accent-gold);
+        }
+
+        .lang-switch-btn {
+            background: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .lang-switch-btn:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-navy);
+        }
+
+        .btn-cta {
+            background-color: var(--accent-gold);
+            color: var(--primary-navy);
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-cta:hover {
+            background-color: var(--accent-gold-hover);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.92), rgba(30, 58, 138, 0.85)), 
+                        url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: var(--white);
+            padding: 180px 2rem 120px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: #CBD5E1;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-navy);
+        }
+
+        /* --- Global Section Styles --- */
+        section {
+            padding: 80px 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 10px auto 0;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* --- About Us --- */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.2rem;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-gold);
+            box-shadow: var(--card-shadow);
+            border-radius: 4px;
+        }
+
+        .stat-card h3 {
+            color: var(--primary-navy);
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* --- Services --- */
+        .services-bg {
+            background-color: #F1F5F9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(197, 160, 89, 0.15);
+            color: var(--accent-gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary-navy);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Industries --- */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .industry-card {
+            background: var(--white);
+            padding: 2rem 1rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #E2E8F0;
+        }
+
+        .industry-card i {
+            font-size: 2.2rem;
+            color: var(--secondary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .industry-card h4 {
+            color: var(--primary-navy);
+            font-size: 1rem;
+        }
+
+        /* --- Process --- */
+        .process-bg {
+            background-color: var(--primary-navy);
+            color: var(--white);
+        }
+
+        .process-bg .section-header h2 {
+            color: var(--white);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .step-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 2rem 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .step-num {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card p {
+            font-size: 0.85rem;
+            color: #94A3B8;
+        }
+
+        /* --- Contact Section --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+
+        .contact-info {
+            background-color: var(--primary-navy);
+            color: var(--white);
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item i {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            padding: 3rem 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #CBD5E1;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--secondary-blue);
+        }
+
+        .btn-submit {
+            background-color: var(--primary-navy);
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #050C1A;
+            color: var(--white);
+            padding: 40px 2rem 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-copy {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #64748B;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-decoration: none;
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-plane-departure"></i>
+                <div class="logo-text">FLY QUALITY <span>CONSULTING</span></div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+                <li><a href="#services" class="nav-link" data-es="Servicios" data-en="Services">Servicios</a></li>
+                <li><a href="#industries" class="nav-link" data-es="Sectores" data-en="Industries">Sectores</a></li>
+                <li><a href="#process" class="nav-link" data-es="Proceso" data-en="Process">Proceso</a></li>
+                <li><a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                <li><button onclick="toggleLanguage()" class="lang-switch-btn" id="lang-btn">EN</button></li>
+                <li><a href="#contact" class="btn-cta" data-es="Solicitar Cotización" data-en="Request Proposal">Solicitar Cotización</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-es="Elevando la Aviación Mediante Calidad y Cumplimiento Normativo" data-en="Elevating Aviation Through Quality & Regulatory Compliance">Elevando la Aviación Mediante Calidad y Cumplimiento Normativo</h1>
+            <p data-es="Firma especializada en consultoría aeronáutica para aerolíneas, operadores de carga, FBOs y servicios aeroportuarios en Costa Rica y Latinoamérica." data-en="Specialized aviation consulting firm for airlines, cargo operators, FBOs, and airport services across Costa Rica and Latin America.">Firma especializada en consultoría aeronáutica para aerolíneas, operadores de carga, FBOs y servicios aeroportuarios en Costa Rica y Latinoamérica.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-cta" data-es="Agendar Consulta" data-en="Schedule Consultation">Agendar Consulta</a>
+                <a href="#services" class="btn-secondary" data-es="Nuestros Servicios" data-en="Our Services">Nuestros Servicios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 data-es="Liderazgo y Experiencia Aeronáutica" data-en="Aviation Leadership & Expertise">Liderazgo y Experiencia Aeronáutica</h2>
+                    <p data-es="Fly Quality Consulting ofrece asesoría estratégica de alto nivel para garantizar que su organización cumpla rigurosamente con los estándares nacionales e internacionales de la aviación civil (DGAC, OACI, IATA)." data-en="Fly Quality Consulting provides high-level strategic guidance to ensure your organization rigorously complies with national and international civil aviation standards (DGAC, ICAO, IATA).">Fly Quality Consulting ofrece asesoría estratégica de alto nivel para garantizar que su organización cumpla rigurosamente con los estándares nacionales e internacionales de la aviación civil (DGAC, OACI, IATA).</p>
+                    <p data-es="Acompañamos a nuestros clientes en todo el proceso de certificación, optimización de operaciones y auditorías integrales de calidad y seguridad operacional." data-en="We guide our clients through full certification processes, operational optimization, and comprehensive quality and safety management audits.">Acompañamos a nuestros clientes en todo el proceso de certificación, optimización de operaciones y auditorías integrales de calidad y seguridad operacional.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>RAC SEA / OPS</h3>
+                        <p data-es="Certificaciones Reguladas" data-en="Regulated Certifications">Certificaciones Reguladas</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>SMS / QMS</h3>
+                        <p data-es="Sistemas de Gestión Implem." data-en="Implemented Management Systems">Sistemas de Gestión Implem.</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>100%</h3>
+                        <p data-es="Cumplimiento Normativo DGAC" data-en="DGAC Regulatory Compliance">Cumplimiento Normativo DGAC</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Audit</h3>
+                        <p data-es="Auditorías de Precisión" data-en="Precision Audits">Auditorías de Precisión</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 data-es="Nuestros Servicios" data-en="Our Services">Nuestros Servicios</h2>
+                <p data-es="Soluciones integrales diseñadas para la excelencia operativa y regulatoria." data-en="Comprehensive solutions tailored for operational and regulatory excellence.">Soluciones integrales diseñadas para la excelencia operativa y regulatoria.</p>
+            </div>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-file-contract"></i></div>
+                    <h3 data-es="Certificación RAC SEA & RAC OPS" data-en="RAC SEA & RAC OPS Certification">Certificación RAC SEA & RAC OPS</h3>
+                    <p data-es="Asesoría paso a paso para la obtención y renovación de certificados ante la Autoridad de Aviación Civil (DGAC)." data-en="Step-by-step guidance for obtaining and renewing certificates with the Civil Aviation Authority (DGAC).">Asesoría paso a paso para la obtención y renovación de certificados ante la Autoridad de Aviación Civil (DGAC).</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 data-es="Sistemas de Gestión de Seguridad (SMS)" data-en="Safety Management Systems (SMS)">Sistemas de Gestión de Seguridad (SMS)</h3>
+                    <p data-es="Diseño, implementación y evaluación de SMS para fomentar una cultura de prevención activa de riesgos." data-en="Design, implementation, and assessment of SMS to build a proactive risk-prevention culture.">Diseño, implementación y evaluación de SMS para fomentar una cultura de prevención activa de riesgos.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-award"></i></div>
+                    <h3 data-es="Sistemas de Gestión de Calidad (QMS)" data-en="Quality Management Systems (QMS)">Sistemas de Gestión de Calidad (QMS)</h3>
+                    <p data-es="Estructuración de procesos de calidad bajo estándares ISO y requisitos aeronáuticos de alta exigencia." data-en="Structuring quality processes according to ISO standards and stringent aviation requirements.">Estructuración de procesos de calidad bajo estándares ISO y requisitos aeronáuticos de alta exigencia.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3 data-es="Auditorías Internas e Inspecciones" data-en="Internal & Regulatory Audits">Auditorías Internas e Inspecciones</h3>
+                    <p data-es="Evaluación minuciosa de procesos para identificar brechas de cumplimiento antes de auditorías oficiales." data-en="Thorough process evaluations to identify compliance gaps ahead of official regulatory audits.">Evaluación minuciosa de procesos para identificar brechas de cumplimiento antes de auditorías oficiales.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-book-open"></i></div>
+                    <h3 data-es="Elaboración de Manuales Operativos" data-en="Operational Manuals & Docs">Elaboración de Manuales Operativos</h3>
+                    <p data-es="Desarrollo y actualización de MGO, MCM, SMS y manuales de procedimientos aeronáuticos." data-en="Development and updates for MGO, MCM, SMS, and specialized aviation procedure manuals.">Desarrollo y actualización de MGO, MCM, SMS y manuales de procedimientos aeronáuticos.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                    <h3 data-es="Capacitación Aeronáutica Especializada" data-en="Specialized Aviation Training">Capacitación Aeronáutica Especializada</h3>
+                    <p data-es="Cursos y talleres ejecutivos sobre auditorías de calidad, gestión de riesgos y normativas de aviación." data-en="Executive courses and workshops covering quality auditing, risk management, and aviation rules.">Cursos y talleres ejecutivos sobre auditorías de calidad, gestión de riesgos y normativas de aviación.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectors -->
+    <section id="industries">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 data-es="Sectores que Atendemos" data-en="Industries We Serve">Sectores que Atendemos</h2>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <i class="fa-solid fa-plane"></i>
+                    <h4 data-es="Aerolíneas Comerciales" data-en="Airlines">Aerolíneas Comerciales</h4>
+                </div>
+                <div class="industry-card">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+                    <h4 data-es="Ground Handling" data-en="Ground Handling">Ground Handling</h4>
+                </div>
+                <div class="industry-card">
+                    <i class="fa-solid fa-plane-arrival"></i>
+                    <h4 data-es="Aeropuertos & Concesiones" data-en="Airports & Operators">Aeropuertos & Concesiones</h4>
+                </div>
+                <div class="industry-card">
+                    <i class="fa-solid fa-building-user"></i>
+                    <h4 data-es="FBOs & Aviación General" data-en="FBOs & General Aviation">FBOs & Aviación General</h4>
+                </div>
+                <div class="industry-card">
+                    <i class="fa-solid fa-boxes-packing"></i>
+                    <h4 data-es="Operadores de Carga" data-en="Cargo Operators">Operadores de Carga</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="process-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 data-es="Nuestro Metodología" data-en="Our Process">Nuestro Metodología</h2>
+            </div>
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-num">01</div>
+                    <h4 data-es="Evaluación Inicial" data-en="Assessment">Evaluación Inicial</h4>
+                    <p data-es="Diagnóstico rápido de la estructura operativa actual." data-en="Rapid diagnosis of current operational structure.">Diagnóstico rápido de la estructura operativa actual.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">02</div>
+                    <h4 data-es="Análisis de Brechas" data-en="Gap Analysis">Análisis de Brechas</h4>
+                    <p data-es="Identificación detallada de inconsistencias normativas." data-en="Detailed identification of regulatory discrepancies.">Identificación detallada de inconsistencias normativas.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">03</div>
+                    <h4 data-es="Documentación" data-en="Documentation">Documentación</h4>
+                    <p data-es="Elaboración y ajuste de manuales y procedimientos." data-en="Preparation and refinement of manuals & policies.">Elaboración y ajuste de manuales y procedimientos.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">04</div>
+                    <h4 data-es="Implementación" data-en="Implementation">Implementación</h4>
+                    <p data-es="Aplica la normativa y capacita al personal." data-en="Execute compliance framework & train personnel.">Aplica la normativa y capacita al personal.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">05</div>
+                    <h4 data-es="Acompañamiento DGAC" data-en="DGAC Support">Acompañamiento DGAC</h4>
+                    <p data-es="Soporte directo hasta la aprobación de la autoridad." data-en="Direct support through regulatory approval.">Soporte directo hasta la aprobación de la autoridad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div>
+                        <h3 data-es="Contacto Directo" data-en="Direct Contact">Contacto Directo</h3>
+                        <p style="color: #94A3B8; margin-bottom: 2rem;" data-es="Inicie la conversión hacia un estándar de cumplimiento superior." data-en="Start elevating your organization to superior compliance standards.">Inicie la conversión hacia un estándar de cumplimiento superior.</p>
+                        
+                        <div class="info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Costa Rica</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>diego.saborio@flyqualityconsulting.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-globe"></i>
+                            <span>www.flyqualityconsulting.com</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem; color: #64748B; font-size: 0.85rem;">
+                        Fly Quality Consulting &copy; 2026. All rights reserved.
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="mailto:diego.saborio@flyqualityconsulting.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label data-es="Nombre Completo" data-en="Full Name">Nombre Completo</label>
+                            <input type="text" name="Name" required placeholder="Ej: Juan Pérez">
+                        </div>
+                        <div class="form-group">
+                            <label data-es="Correo Electrónico" data-en="Email Address">Correo Electrónico</label>
+                            <input type="email" name="Email" required placeholder="ejemplo@empresa.com">
+                        </div>
+                        <div class="form-group">
+                            <label data-es="Servicio Requerido" data-en="Service Requested">Servicio Requerido</label>
+                            <select name="Service">
+                                <option value="RAC SEA / OPS">Certificación RAC SEA / OPS</option>
+                                <option value="SMS">Sistemas de Gestión de Seguridad (SMS)</option>
+                                <option value="QMS">Sistemas de Gestión de Calidad (QMS)</option>
+                                <option value="Auditorias">Auditoría / Inspección de Cumplimiento</option>
+                                <option value="Otro">Otro servicio</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label data-es="Mensaje / Detalle" data-en="Message / Details">Mensaje / Detalle</label>
+                            <textarea name="Message" rows="4" placeholder="Describa brevemente su requerimiento..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit" data-es="Enviar Consulta" data-en="Send Request">Enviar Consulta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <i class="fa-solid fa-plane-departure"></i>
+                <div class="logo-text">FLY QUALITY <span>CONSULTING</span></div>
+            </div>
+            <div>
+                <a href="#about" class="nav-link" style="margin-right: 15px;" data-es="Nosotros" data-en="About Us">Nosotros</a>
+                <a href="#services" class="nav-link" style="margin-right: 15px;" data-es="Servicios" data-en="Services">Servicios</a>
+                <a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 Fly Quality Consulting | San José, Costa Rica.
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/50688888888?text=Hola,%20quisiera%20mas%20informacion%20sobre%20sus%20servicios%20en%20Fly%20Quality%20Consulting" class="whatsapp-btn" target="_blank" title="WhatsApp Chat">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript for Dynamic Language Switching -->
+    <script>
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            const langBtn = document.getElementById('lang-btn');
+            langBtn.textContent = currentLang === 'es' ? 'EN' : 'ES';
+
+            const elementsToTranslate = document.querySelectorAll('[data-es][data-en]');
+            elementsToTranslate.forEach(element => {
+                element.textContent = element.getAttribute(`data-${currentLang}`);
+            });
+        }
+    </script>
+</body>
+</html>
