@@ -812,5 +812,175 @@
             });
         }
     </script>
+    <!-- ========================================== -->
+<!-- WIDGET DE WHATSAPP - FLY QUALITY CONSULTING -->
+<!-- ========================================== -->
+
+<!-- Estilos CSS del Widget -->
+<style>
+  .wa-widget-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Botón Flotante */
+  .wa-float-btn {
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease;
+  }
+
+  .wa-float-btn:hover {
+    transform: scale(1.08);
+  }
+
+  /* Ventana de Chat */
+  .wa-chat-box {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    width: 320px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .wa-chat-box.active {
+    display: flex;
+  }
+
+  /* Cabecera */
+  .wa-chat-header {
+    background-color: #1b365d; /* Color corporativo azul */
+    color: #ffffff;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .wa-header-info strong {
+    display: block;
+    font-size: 15px;
+  }
+
+  .wa-header-info span {
+    font-size: 12px;
+    opacity: 0.85;
+  }
+
+  .wa-close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  /* Cuerpo del Mensaje */
+  .wa-chat-body {
+    background-color: #e5ddd5;
+    padding: 15px;
+  }
+
+  .wa-msg {
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    color: #333333;
+    line-height: 1.4;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  /* Pie con el Botón de Acción */
+  .wa-chat-footer {
+    padding: 12px;
+    background: #ffffff;
+    text-align: center;
+  }
+
+  .wa-start-btn {
+    display: block;
+    background-color: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+
+  .wa-start-btn:hover {
+    background-color: #1ebc57;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<!-- Estructura HTML del Widget -->
+<div class="wa-widget-container">
+  
+  <!-- Ventana Desplegable -->
+  <div id="waChatBox" class="wa-chat-box">
+    <div class="wa-chat-header">
+      <div class="wa-header-info">
+        <strong>Fly Quality Consulting</strong>
+        <span>Atención al Cliente</span>
+      </div>
+      <button class="wa-close-btn" onclick="toggleWaChat()">&times;</button>
+    </div>
+    
+    <div class="wa-chat-body">
+      <div class="wa-msg">
+        👋 Hola, ¿en qué podemos ayudarte con tus operaciones o consultoría aeronáutica?
+      </div>
+    </div>
+    
+    <div class="wa-chat-footer">
+      <a href="https://wa.me/50688262813?text=Hola,%20quisiera%20mas%20informacion%20sobre%20sus%20servicios%20en%20Fly%20Quality%20Consulting" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="wa-start-btn">
+        Iniciar Chat en WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- Botón Flotante con Icono -->
+  <button class="wa-float-btn" onclick="toggleWaChat()" aria-label="Abrir chat de WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+    </svg>
+  </button>
+
+</div>
+
+<!-- Script de Funcionalidad -->
+<script>
+  function toggleWaChat() {
+    const chatBox = document.getElementById('waChatBox');
+    chatBox.classList.toggle('active');
+  }
+</script>
 </body>
 </html>
